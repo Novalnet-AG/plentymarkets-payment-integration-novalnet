@@ -1,0 +1,21 @@
+<div class="row">
+    <strong class="col-xs-6 col-sm-5"></strong>
+    <span class="col-xs-6">{{comments|raw}}</span>
+   
+   {% if payment_type == 'NOVALNET_CASHPAYMENT' and barzahlentoken is not empty  and  services.template.isCurrentTemplate('tpl.confirmation') %}
+    <button id="barzahlen_button" class="bz-checkout-btn" onclick="javascript:bzCheckout.display();">{{ trans("Novalnet::PaymentMethod.barzahlen_token") }}</button>
+    <style type="text/css">
+        #bz-checkout-modal { position: fixed !important; }
+    </style>
+    <script src="{{barzahlenurl}}"
+            class="bz-checkout"
+            data-token="{{barzahlentoken}}">
+           
+    </script>
+  {% endif %}
+  
+</div>
+
+
+
+

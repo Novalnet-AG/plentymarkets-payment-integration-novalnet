@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="{{plugin_path('Novalnet')}}/css/novalnet_ui.css">
+<script src="{{ plugin_path('Novalnet') }}/js/novalnet_sepa.js"></script>
+<script defer src="{{plugin_path('Novalnet')}}/js/novalnet_guarantee_payment.js"></script>
+
+<form method="post" id="novalnet_form" name="novalnet_form" action="{{nnPaymentProcessUrl}}">
+    <input type="hidden" id="paymentKey" name="paymentKey" value="{{paymentMopKey}}" />
+    <input type='hidden' id='nn_sepa_valid_dob_msg' id="nn_sepa_valid_dob_msg" value=value="{{trans("Novalnet::PaymentMethod.doberror")}}">
+    <div class="modal-header">
+        
+        <button type="button" aria-label="Close" data-dismiss="modal" class="close" onClick="window.location.reload();">
+            <span aria-hidden="true">x</span>
+        </button> 
+        
+        <h4 class="modal-title">{{paymentName}}</h4>
+    </div>
+    <div class="modal-body">
+    
+        <fieldset>      
+                <input type="hidden" id="paymentKey" name="paymentKey" value="{{paymentMopKey}}" />
+                <input type="hidden" id="nn_dob_empty" name="nn_dob_empty" value="{{trans("Novalnet::PaymentMethod.dobEmpty")}}">
+				<input type="hidden" id="nn_dob_invalid" name="nn_dob_invalid" value="{{trans("Novalnet::PaymentMethod.dobInvalid")}}">
+				<input type="hidden" id="nn_dob_month" name="nn_dob_month" value="{{trans("Novalnet::PaymentMethod.monthOption")}}">
+                <input type="hidden" name="nn_invoice_valid_dob_msg" id="nn_invoice_valid_dob_msg" value="{{trans("Novalnet::PaymentMethod.doberror")}}">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12">
+                                <div data-model="nn_invoice_birthday" class="input-unit">
+                                    <input type="text" name="nn_sepa_cardholder" value="{{endcustomername}}" id="nn_sepa_cardholder"> 
+                                    <label for="sepa_holder">{{trans("Novalnet::PaymentMethod.sepa_account_holder_label")}}*</label>
+                                </div>
+                                <div data-model="nn_sepa_birthday" class="input-unit">
+                        <input type="text" name="nn_sepa_iban" autocomplete="off" id="nn_sepa_iban">
+                                    <label for="sepa_iban">{{trans("Novalnet::PaymentMethod.sepa_iban_label")}}*</label>
+                                </div>
+                                <a href="#iban_details" data-toggle="collapse">{{trans("Novalnet::PaymentMethod.ibanMandate")}}</a>
+                                <div id="iban_details" class="collapse card-body" style="background:whitesmoke;padding:3%;">
+                                <div>{{trans("Novalnet::PaymentMethod.ibanDesc")}}</div><br>
+                                <div><b>{{trans("Novalnet::PaymentMethod.creditorIdentifier")}} </div></b><br>
+                                <div><b>{{trans("Novalnet::PaymentMethod.note")}}</b> {{trans("Novalnet::PaymentMethod.noteDesc")}}</div></div><br>
+                                
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+		{% if nnGuaranteeStatus == "guarantee" %}
+
+		<br><div class="row">
+		<div class="col-sm-12"><b><label for="nn_birthday">{{trans("Novalnet::PaymentMethod.birthdate_label")}}<span class="text-danger">*</span></label></b></div>
+							<div class="col-sm-4">
+								<input type="tel" name="nn_guarantee_date" id="nn_guarantee_date" maxlength="2" placeholder="{{trans("Novalnet::PaymentMethod.day")}}" class="form-control" autocomplete="off">
+							</div>
+
+							<div class="col-sm-4">
+							   <select id="nn_guarantee_month" type="text" name="nn_guarantee_month" placeholder="{{trans("Novalnet::PaymentMethod.month")}}" class="form-control">
+							   <option value="0">{{trans("Novalnet::PaymentMethod.monthOption")}}</option>
+								{% for i in 1..12 %}
+									<option value="{{i}}">{{ trans("Novalnet::PaymentMethod.month#{i}") }}</option>
+								{% endfor %}
+
+							   </select>
+							 </div>
+
+							<div class="col-sm-4 autocomplete">
+								<input type="text" name="nn_guarantee_year" id="nn_guarantee_year" maxlength="4" placeholder="{{trans("Novalnet::PaymentMethod.year")}}" class="form-control" autocomplete="off">
+							</div>
+
+						</div> 
+                                {% endif %}
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="novalnet_form_btn" onclick="">
+            <i class="fa fa-check" aria-hidden="true"> </i>
+            {{ trans("Novalnet::PaymentMethod.submit_button_text") }}
+        </button>
+    </div>
+</form>

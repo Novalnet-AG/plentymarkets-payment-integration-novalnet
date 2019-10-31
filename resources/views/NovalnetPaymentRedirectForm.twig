@@ -1,0 +1,15 @@
+<form method="post" name="novalnet_redirect_form" id="novalnet_redirect_form"  action="{{nnPaymentUrl}}">
+    {% for dataKey,dataValue in formData %}
+        <input id="{{dataKey}}" value="{{dataValue}}" name="{{dataKey}}" type="hidden"/>
+    {% endfor %}
+
+    <div>{{ trans("Novalnet::PaymentMethod.novalnet_redirect_text") }}</div>
+    <button type="submit" class="btn btn-primary" id="novalnet_form_btn">
+        {{ trans("Novalnet::PaymentMethod.submit_button_text") }}
+    </button>
+</form>
+
+<script type="text/javascript">
+document.getElementById('novalnet_redirect_form').submit();
+</script>
+
