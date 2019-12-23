@@ -64,8 +64,8 @@ Gutenbergstr. 2<br>
 Deutschland<br>
 Web: <a href= "https://www.novalnet.de/"> www.novalnet.de </a>
 
-## Novalnet
+## Novalnet AG
 
-Novalnet is a leading <a href="https://www.novalnet.de/zahlungsinstitut"> financial services institution </a> offering payment gateways for processing online payments. Operating in the market as a full payment service provider Novalnet AG provides online merchants user-friendly payment integration with all major shop systems and self-programmed sites.
+Novalnet AG is a leading <a href="https://www.novalnet.de/zahlungsinstitut"> financial services institution </a> offering payment gateways for processing online payments. Operating in the market as a full payment service provider Novalnet AG provides online merchants user-friendly payment integration with all major shop systems and self-programmed sites.
 
 Our SaaS engine is <a href="https://www.novalnet.de/pci-dss-zertifizierung"> PCI DSS certified </a> and designed to enable real-time risk management, secured payments via escrow accounts, efficient receivables management, dynamic member and subscription management, customized payment solutions for various business models (e.g. marketplaces, affiliate programs etc.) etc.
