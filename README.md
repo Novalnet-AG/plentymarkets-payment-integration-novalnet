@@ -51,7 +51,7 @@ Follow these steps to successfully install the Plentymarkets Payment Integration
 5. You’re ready to go!
 
 ## License
-See our License Agreement at: <a href= "https://www.novalnet.de/payment-plugins/kostenlos/lizenz"> https://www.novalnet.de/payment-plugins/kostenlos/lizenz </a>
+See our License Agreement at: https://www.novalnet.com/payment-plugins/free/license
 
 ## Documentation & Support
 
