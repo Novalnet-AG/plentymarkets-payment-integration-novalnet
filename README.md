@@ -19,7 +19,7 @@ The plugin is available for the 7.0.0 version in the following languages: EN & D
 * Refund options for various payment types
 * Responsive templates
 
-<a href= "https://www.novalnet.de/produkte"> Detailed overview of all payment services, including end-customers support & real-time monitoring. </a>
+<a href= "https://www.novalnet.com/solutions"> Detailed overview of all payment services, including end-customers support & real-time monitoring. </a>
 For technical inquiries or documentation, please contact <a href="mailto:sales@novalnet.de"> sales@novalnet.de </a>
 
 ## Integrated payment methods
