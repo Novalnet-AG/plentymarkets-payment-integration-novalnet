@@ -1,0 +1,37 @@
+{# Load the css and Js #}
+<link rel="stylesheet" href="{{plugin_path('Novalnet')}}/css/novalnetUi.css">
+<script type="text/javascript" src="{{plugin_path('Novalnet')}}/js/novalnetCc.js" defer></script>
+
+{# Credit card payment form #}
+<form method="post" id="nn_cc_form" name="nn_cc_form" action="{{nnPaymentProcessUrl}}">
+    {# Modal box for Credit card payment form #}
+    <div class="modal-header">
+        <h5 class="modal-title">{{paymentName}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="window.location.reload();">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        {# Set the post data #}
+        <input type="hidden" id="nn_payment_key" name="nn_payment_key" value="{{paymentMopKey}}">
+        <input type="hidden" id="nn_pan_hash" name="nn_pan_hash">
+        <input type="hidden" id="nn_unique_id" name="nn_unique_id">
+        <input type="hidden" id="nn_cc3d_redirect" name="nn_cc3d_redirect">
+        <input type="hidden" id="nn_cc_formdetails" name="nn_cc_formdetails" value="{{transactionData|escape}}">
+        <input type="hidden" id="nn_cc_formfields" name="nn_cc_formfields" value="{{customData|escape}}">
+        {# Set the reinitialization is used #}
+        {% if reinitializePayment is not empty %}
+            <input type="hidden" id="nn_reinitializePayment" name="nn_reinitializePayment" value="{{reinitializePayment}}">
+            <input type="hidden" id="nn_order_amount" name="nn_order_amount" value="{{orderAmount}}">
+        {% endif %}
+        {# Load the Iframe #}
+        <div class="loader"></div>
+        <iframe id="nn_iframe" frameborder="0" scrolling="no" width="100%"></iframe>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="novalnet_form_btn">{{trans("Novalnet::Customize.template_submit_button_text")}} <i class="fa fa-check"></i></button>
+    </div>
+</form>
+
