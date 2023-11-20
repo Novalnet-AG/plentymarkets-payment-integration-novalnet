@@ -1,0 +1,56 @@
+{# Load the css and Js #}
+<link rel="stylesheet" href="{{plugin_path('Novalnet')}}/css/novalnetUi.css">
+<script defer src="{{plugin_path('Novalnet')}}/js/novalnetValidation.js"></script>
+
+{# DIRECT DEBIT ACH payment form #}
+<form method="post" id="novalnet_form" name="novalnet_form" action="{{nnPaymentProcessUrl}}">
+     {# Modal box for ACH payment form #}
+      <div class="modal-header">
+        <h5 class="modal-title">{{paymentName}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="window.location.reload();">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+    <div class="modal-body">
+        {# Set the post data #}
+        <input type="hidden" id="nn_payment_key" name="nn_payment_key" value="{{paymentMopKey}}">
+        
+        {# Set the reinitialization is used #}
+        {% if reinitializePayment is not empty %}
+            <input type="hidden" id="nn_reinitializePayment" name="nn_reinitializePayment" value="{{reinitializePayment}}">
+            <input type="hidden" id="nn_order_amount" name="nn_order_amount" value="{{orderAmount}}">
+        {% endif %}
+        <div class="row">
+            <div class="col-12">
+                <div class="input-unit">
+                    <input type="text" name="nn_ach_account_holder" id="nn_ach_account_holder"  value="{{AccountHolderName}}" required>
+                    <label for="nn_ach_account_holder">{{trans("Novalnet::Customize.template_ach_account_holder_label")}}*</label>
+                </div>
+            </div>
+        </div>
+        
+       <div class="row">
+            <div class="col-12">
+                <div class="input-unit">
+                    <input type="text" name="nn_ach_account_number" id="nn_ach_account_number" class="nn_number" placeholder="123456789" required>
+                    <label for="nn_ach_account_number">{{trans("Novalnet::Customize.template_ach_account_number_label")}}*</label>
+                </div>
+            </div>
+        </div>
+           
+         <div class="row">
+            <div class="col-12">
+                <div class="input-unit">
+                    <input type="text" name="nn_ach_routing_number" id="nn_ach_routing_number" class="nn_number" placeholder="031200730" required>
+                    <label for="nn_ach_routing_number">{{trans("Novalnet::Customize.template_ach_routing_number_label")}}*</label>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="novalnet_form_btn">{{trans("Novalnet::Customize.template_submit_button_text")}} <i class="fa fa-check"></i></button>
+      </div>
+</form>

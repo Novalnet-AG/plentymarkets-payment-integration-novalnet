@@ -1,0 +1,22 @@
+{# Render the Novalnet transaction details #}
+{% if transactionComments is not empty %}
+<div class="row">
+    <strong class="col-6 col-sm-5">{{trans("Novalnet::PaymentMethod.novalnet_details")}}</strong>
+    <span class="col-6 col-sm-7">{{transactionComments|raw}}</span>
+
+    {# Display the cashpayment button #}
+    {% set successStatus = ['CONFIRMED'] %}
+    {% if cashpaymentToken is not empty and (txStatus in successStatus) and services.template.isCurrentTemplate('tpl.confirmation') %}
+    <button id="barzahlen_button" class="bz-checkout-btn" onclick="javascript:bzCheckout.display();">{{trans("Novalnet::PaymentMethod.barzahlen_token")}}</button>
+    <style type="text/css">
+        #bz-checkout-modal {position: fixed !important;}
+        #barzahlen_button {width: max-content; margin-top: -30px !important; margin-bottom: 5% !important; margin-left: 20px !important;}
+    </style>
+    <script src="{{cashpaymentUrl}}"
+            class="bz-checkout"
+            data-token="{{cashpaymentToken}}"
+            data-auto-display="true">
+    </script>
+    {% endif %}
+</div>
+{% endif %}
