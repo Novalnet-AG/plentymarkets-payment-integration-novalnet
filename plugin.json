@@ -1,0 +1,62 @@
+{
+    "name": "Novalnet",
+    "namespace": "Novalnet",
+    "marketplaceName": {"de": "Novalnet", "en": "Novalnet"},
+    "type": "payment",
+    "version": "12.1.0",
+    "license": "GPL-3.0",
+    "pluginIcon": "icon_plugin_xs.png",
+    "price": 0.0,
+    "description": "PCI Compliant, seamless integration with the various types of payment and payment-related services integrated into one unique platform",
+    "shortDescription": {
+        "de": "Das Novalnet Zahlungsplugin für Plentymarkets vereinfacht Ihre tägliche Arbeit, indem der gesamte Zahlungsvorgang vom Checkout bis zum Forderungsmanagement automatisiert wird. Das Plugin ist dazu entworfen, Sie dabei zu unterstützen, Ihre Verkaufszahlen zu erhöhen, indem es Ihnen verschiedene internationale und lokale Zahlungsarten bietet. Das Plugin ist perfekt an Plentymarkets angepasst sowie an die qualitativ hochwertige Palette von Dienstleistungen des Zahlungsanbieters Novalnet.",
+        "en": "Novalnet payment plugin for plentymarkets simplifies your daily work by automating the entire payment process from checkout till collection. This plugin is designed to help you increase your sales by offering various international and local payment methods. The plugin which is perfectly adjusted to plentymarkets and the top-quality range of services of the payment provider Novalnet."
+    },
+    "categories": [4083],
+    "author": "Novalnet AG",
+    "authorIcon": "icon_author_xs.png",
+    "email": "sales@novalnet.de",
+    "phone": "+49 89 923068320",
+    "keywords": ["Novalnet", "plentymarkets", "payment", "plugin"],
+    "javaScriptFiles": [],
+    "containers": [],
+    "require": {
+        "IO": ">= 4.0.0",
+        "Ceres": ">= 4.0.0"
+    },
+    "platform": {
+        "php": ">=7.3 <8.1"
+    },
+    "dependencies": {
+        "guzzlehttp/guzzle": "6.3.*"
+    },
+    "serviceProvider": "Novalnet\\Providers\\NovalnetServiceProvider",
+    "runOnBuild": [
+        "Novalnet\\Migrations\\CreateNovalnetPaymentMethods1210",
+        "Novalnet\\Migrations\\CreateTransactionTable",
+        "Novalnet\\Migrations\\UpdateTransactionTableDataType",
+        "Novalnet\\Migrations\\CreateSettingsTable"
+    ],
+    "dataProviders": [
+        {
+            "key": "Novalnet\\Providers\\DataProvider\\NovalnetOrderConfirmationDataProvider",
+            "name": "Novalnet transaction details",
+            "description": "Display the Novalnet transaction details on the order confirmation page"
+        },
+        {
+            "key": "Novalnet\\Providers\\DataProvider\\NovalnetGooglePayButtonDataProvider",
+            "name": "Novalnet Google Pay button",
+            "description": "Display the Google Pay button"
+        },
+        {
+            "key": "Novalnet\\Providers\\DataProvider\\NovalnetPaymentMethodScriptDataProvider",
+            "name": "Novalnet Payment Script",
+            "description": "A script for the Novalnet payment methods process"
+        },
+        {
+            "key": "Novalnet\\Providers\\DataProvider\\NovalnetPaymentMethodReinitializePaymentDataProvider",
+            "name": "Novalnet Initiate Payment",
+            "description": "Display the pay now button"
+        }
+    ]
+}
