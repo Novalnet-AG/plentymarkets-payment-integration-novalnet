@@ -24,11 +24,13 @@ Through the individuality and flexibility, you can choose which payment methods 
 Find more about plentymarkets plugin on: https://www.novalnet.de/site_pdf/plentymarkets/Installation_guide.pdf<br>
 To test our demo shop, please visit: http://novalnet.plentymarkets-cloud02.com/
 
-## Contact
+## Documentation & Support
+For more information about the Plentymarkets Payment Integration by Novalnet, please get in touch with us: <a href="mailto:sales@novalnet.de"> sales@novalnet.de </a> or +49 89 9230683-20<br>
+
 Novalnet AG<br>
 Zahlungsinstitut (ZAG)<br>
-Feringastr. 4<br>
-85774 Unterföhring<br>
+Gutenbergstraße 7<br>
+D-85748 Garching<br>
 Deutschland<br>
 E-mail: sales@novalnet.de<br>
 Tel: +49 89 9230683-20<br>
