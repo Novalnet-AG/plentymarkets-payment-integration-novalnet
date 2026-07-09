@@ -1,0 +1,7 @@
+{# Render the Novalnet transaction details #}
+{% if transactionComments is not empty %}
+<div class="row">
+    <strong class="col-6 col-sm-5">{{trans("Novalnet::PaymentMethod.novalnet_details")}}</strong>
+    <span class="col-6 col-sm-7">{{transactionComments|raw}}</span>
+</div>
+{% endif %}

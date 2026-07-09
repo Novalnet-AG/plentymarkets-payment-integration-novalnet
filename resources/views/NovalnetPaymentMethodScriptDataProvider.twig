@@ -1,0 +1,165 @@
+{# Set the post data and Load the JS #}
+<input type="hidden" name="nn_paymentmethod_key" id="nn_paymentmethod_key" value="{{nnPaymentMethodKey}}">
+<input type="hidden" name="nn_paymentmethod_id" id="nn_paymentmethod_id" value="{{nnPaymentMethodId}}">
+<script type="text/javascript">
+
+window.hideApplePayButton = function () {
+
+    var nnPaymentMethodId = $('#nn_paymentmethod_id').val();
+    var iosDevice = iOS();
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        if (iosDevice && isSafari) {
+            $('li[data-id="' + nnPaymentMethodId + '"]').show();
+        } else {
+            $('li[data-id="' + nnPaymentMethodId + '"]').hide();
+        }
+};
+
+window.showCheckoutButton = function () {
+
+    $('.fa-arrow-right').parent('button').show();
+};
+
+window.showApplePayButton = function () {
+
+    var nnPaymentMethodId = $('#nn_paymentmethod_id').val();
+    var nnPaymentMethodKey = $('#nn_paymentmethod_key').val();
+
+    if (nnPaymentMethodKey === 'NOVALNET_APPLEPAY') {
+
+        var iosDevice = iOS();
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        if (iosDevice && isSafari) {
+            $('li[data-id="' + nnPaymentMethodId + '"]').show();
+        } else {
+            $('li[data-id="' + nnPaymentMethodId + '"]').hide();
+        }
+    }
+    
+    {# Call the Direct payment methods #}
+        jQuery("#nn_direct_payment_process").click(function () {
+            jQuery.get("/payment/novalnet/directPaymentProcess", function(data) {
+                window.location = data;
+            });
+        });
+
+        {# Call the form payment methods #}
+        jQuery('#nn_form_payment_process').click(function() {
+            jQuery("[id^='nnReinitPaymentMethod-']").hide();
+            jQuery('#novalnetPaymentForm').show();
+        });
+        
+        {# Call the redirect payment methods #}
+        jQuery('#nn_redirect_payment_process').click(function() {
+            $("#redirectPayment").submit();
+        }); 
+    
+    
+};
+
+function iOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod',
+    'MacIntel'
+  ].includes(navigator.platform)
+  || navigator.userAgent.includes("Mac");
+}
+$(document).ready(function () {
+
+    showApplePayButton();
+    const observer = new MutationObserver(function (mutations) {
+
+        mutations.forEach(function (mutation) {
+
+            var nnPaymentMethodKey = $('#nn_paymentmethod_key').val();
+
+document.addEventListener('billingAddressChanged', function () {
+
+    const billingAddress = ceresStore.state.address.billingAddress;
+    if (!billingAddress) {
+
+document.querySelectorAll('.payment-method-select input[type="radio"]')
+    .forEach(input => {
+
+        input.addEventListener('change', function () {
+
+            const isGooglePay = this
+                .closest('li')
+                ?.querySelector('img[src*="novalnet_googlepay.png"]');
+
+            if (this.checked && isGooglePay) {
+               
+                jQuery("#nn_google_pay").show();
+                jQuery('.fa-arrow-right').parent('button').hide();
+            } else {
+                jQuery("#nn_google_pay").hide();
+                jQuery('.fa-arrow-right').parent('button').show();
+                
+            }
+        });
+
+    });
+        return;
+    }
+
+    location.reload();
+});
+
+         
+
+     if (nnPaymentMethodKey === 'NOVALNET_APPLEPAY') {
+
+                if ($(mutation.target).find(
+                    'li[data-id="' + $('#nn_paymentmethod_id').val() + '"]'
+                ).length > 0) {
+
+                    showApplePayButton();
+                }
+            }
+            
+        });
+
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+});
+
+$(document).ajaxComplete(function(event, xhr, settings) {
+
+    const url = settings.url;
+
+    if (
+        (
+            url.includes('/checkout/shippingId/') ||
+            url.includes('/coupon/')
+        ) &&
+        !sessionStorage.getItem('checkoutReloaded')
+    ) {
+
+        sessionStorage.setItem('checkoutReloaded', '1');
+
+        location.reload();
+    }
+});
+
+window.addEventListener('load', function () {
+
+    sessionStorage.removeItem('checkoutReloaded');
+});
+
+</script>
+
+<form id="redirectPayment" method="post" action="{{redirectUrl}}">
+<input type="hidden"  value="1" name="nnReinitiatePayment" id="nnReinitiatePayment">
+<input type="hidden"  value="{{redirectUrl}}" name="nnRedirectPayment" id="nnRedirectPayment">
+</form>

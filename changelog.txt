@@ -1,0 +1,173 @@
+*** Changelog ***
+
+= 12.3.0   - 2026.07.09 =
+* New      - Implemented Account Holder field for Direct Debit SEPA, Direct Debit SEPA with Payment Guarantee, and Instalment by Direct Debit SEPA, in compliance with Verification of Payee (VoP) regulations
+* New      - EPC/SPC QR code implemented for Prepayment, Invoice, Invoice with payment guarantee and Instalment by Invoice payments
+* Fix      - Updated post data URL handling for domains with or without a trailing slash
+* Enhanced - iDEAL payment logo and title to iDEAL | Wero
+* Enhanced - Callback/Webhook logic updated for efficient handling of Dynamic IPs
+* Enhanced - Optimized phone number and company data handling in payment request
+* Enhanced - Implemented allowed countries and order amount limits configuration for all payment methods
+* Enhanced - User interface for the event creation workflow
+* Removed  - Sofort, giropay, Barzahlen/viacash and payconiq payment
+
+= 12.2.0   - 2025.05.06 =
+* New      - Implemented TWINT payment
+* Fix      - Google pay button is displayed properly when Other payment provider are active
+* Fix      - Novalnet transaction details are updated when creating an invoice using Document Builder
+* Enhanced - Extension of Instalment Payment cycles till 36 cycles
+* Enhanced - Offering Instalment payments and Guarantee payments to B2B customers in Switzerland
+* Enhanced - Alert email notification for successful transactions to the store owner for missing orders
+* Enhanced - Built-in Sub-Resource Integrity (SRI) integrated for JavaScript files to improve security for preventing unauthorized modifications
+* Enhanced - Minification of  JavaScript files for enhanced performance
+* Enhanced - Optimized the Callback/Webhook process for fetching Dynamic IP
+* Enhanced - Novalnet payment plugin has been optimized for new testcase
+
+= 12.1.0   - 2024.04.23 =
+* New      - Instalment by Direct debit SEPA, Instalment by Invoice, Direct Debit ACH, MBway, Blik and Payconiq
+* New      - Order creation process handled from the shop admin panel
+* Enhanced - Removed due date configuration for Direct debit SEPA with payment guarantee
+
+= 12.0.2   - 2023.09.04 =
+* Fix      - Error message 'Missing Input Data' cleared when the address fields were filled
+* Fix      - Credit/Debit Cards iframe loading is optimized to avoid page load delay
+* Fix      - cURL error log during the payment process
+* Fix      - Data provider's file should be executed only for Novalnet payments while displaying the payments on the checkout page
+* Removed  - Google Pay button theme configuration
+
+= 12.0.1   - 2023.02.14 =
+* Fix      - Page load delay for Credit/Debit Cards iframe
+* Fix      - Rejected error messages were displayed on the checkout page, when the order creation option is deactivated
+* Removed  - "isBackendActive" function as per the coding standard review
+
+= 12.0.0   - 2022.11.08 =
+Major version release: Payment plugin is optimized to support the assistant structure with a new v2 API structure, additional payment methods integration and enhanced usability.
+
+= 2.3.1   - 2022.06.29 =
+* Enhanced - Compatible for PHP 8.0 version
+
+= 2.3.0   - 2022.06.28 =
+* New      - Implemented Apple Pay, Online bank transfer, Bancontact, Multibanco, PostFinance Card, PostFinance E-Finance payment methods
+* New      - Order creation process handled from the shop admin panel
+* New      - Payment filter added to trigger events for Novalnet transactions
+* Enhanced - Updated payment logo for Sofort payment
+
+= 2.2.4   - 2022.05.02 =
+* Enhanced - Orders initially placed with default payment methods, reinitiate payment option will be displayed during the change payment method process
+* Enhanced - Code optimization in the confirmation page to avoid the 404 error
+
+= 2.2.3   - 2022.03.15 =
+* Fix      - Credit note refund for reinit payment option
+* Fix      - Language translation handled in the order success page
+* Fix      - Order History view icon display
+* Fix      - Currency conversion handled while using events in the shop backend
+* Fix      - Restricted double booking transaction during communication break
+* Fix      - B2B guarantee payments now supported for users from Denmark and France
+
+= 2.2.2   - 2021.12.27 =
+* Fix      - Transaction amount mismatch for Credit Card payment during VAT calculation for Non-EU countries
+* Fix      - Payment credit information not updated in the shop system during payment method change
+* Enhanced - Multilanguage support for Payment names, Payment descriptions, and Payment form (template) as per shop default
+
+= 2.2.1   - 2021.11.02 =
+* Fix      - Refund details displayed for the child order during Refund via Credit note for the payments - Credit Card, Direct Debit SEPA, Direct Debit SEPA with payment guarantee, Invoice, Invoice with payment guarantee, Instant Bank Transfer, iDEAL, PayPal, eps, giropay and Przelewy24
+* Fix      - Error message displayed in the order confirmation page for cancelled orders, when clicking the staus link in the End customer email
+
+= 2.2.0   - 2021.10.11 =
+* New      - Implemented Change payment method and Initiate payment feature for the failure and rejection orders
+
+= 2.1.1   - 2021.09.09 =
+* Fix      - Error message display for rejected transactions
+
+= 2.1.0   - 2021.09.07 =
+* New      - Implemented enforce 3D secure payment for credit card for countries outside EU
+* New      - Implemented Payment duration for Prepayment
+* Fix      - Payment status percentage will not reduced during the Refund via Credit note and Status change event
+* Fix      - During the initial order status, Novalnet transaction details will display in the Invoice PDF
+* Fix      - Restricted double booking for redirect payments
+* Enhanced - Order status has been optimized as per shop default structure
+* Enhanced - Semantic versioning standards optimized in plugin.json
+* Enhanced - Credit/Debit Cards payment method description
+* Enhanced - Barzahlen payment method name and logo
+* Removed  - Proxy server configuration
+* Removed  - Referrer Id configuration
+* Removed  - Gateway timeout configuration
+* Removed  - BCC field for webhook email notification
+
+= 2.0.14   - 2021.06.22 =
+* Fix      - Updated IP address to get the actual IP of Novalnet server
+* Fix      - Handled initial level payment types in callback process for the follow-up and communication process
+
+= 2.0.13   - 2020.06.03 =
+* Enhanced - Default order creation before executing payment call which is applicable for Card and Account-Based payments. This is to avoid the missing orders during payment completion for non-return of end user if the end user's browser closed or if session timeouts at the time of payment, etc.!
+
+= 2.0.12   - 2020.04.29 =
+* Enhanced - Credit note event added to the refund payments (Credit Card, Direct Debit SEPA, Direct Debit SEPA with payment guarantee, Invoice, Invoice with payment guarantee, Instant Bank Transfer, iDEAL, PayPal, eps, giropay and Przelewy24)
+
+= 2.0.11   - 2020.04.09 =
+* Fix      - Adjusted validation in the checkout page for First name and Last name field
+* Fix      - Transaction detail are not displayed in Invoice PDF and shop front order history for Invoice, Invoice with payment guarantee and Prepayment
+* Fix      - For Guarantee invoice payment while capturing the order, amount is not displayed in the transaction details
+* Fix      - Due date update notification in the shop, on activation of transaction for Invoice, Invoice with payment guarantee and Prepayment
+* Fix      - Basket amount is incorrectly displayed on including Tax
+
+= 2.0.10   - 2019.10.31 =
+* New      - Customized date of birth field in checkout page
+* Fix      - Payment plugin adapted to avoid creating duplicate entries in the order history for the same TID
+
+= 2.0.9   - 2019.09.13 =
+* Fix      - Issue in displaying Novalnet transaction details in invoice pdf using the event OrderPdfGeneration
+* Fix      - Issue with activation of transaction for Invoice, Invoice with payment guarantee and Prepayment
+
+= 2.0.8   - 2019.08.30 =
+* New      - Display Novalnet transaction details in invoice pdf using the event OrderPdfGeneration
+* Removed  - Unused migration files
+
+= 2.0.7   - 2019.06.24 =
+* Fix      - Adjusted payment plugin to restrict the double booking by the end-user
+
+= 2.0.6   - 2019.05.24 =
+* Fix      - Added IO in plugin.json
+
+= 2.0.5   - 2019.05.14 =
+* Enhanced - Novalnet bank details will be displayed in invoice for on-hold transactions in Invoice, Invoice with payment guarantee and Prepayment
+
+= 2.0.4   - 2019.04.24 =
+* Fix      - Display payment types only for allowed countries feature
+* New      - Payment method will displayed to end customer based on minimum and maximum order amount
+* Enhanced - Novalnet payment plugin has been optimized as per new testcase
+
+= 2.0.3   - 2019.04.02 =
+* Enhanced - Novalnet payment module has been optimized as per new testcase.
+
+= 2.0.2   - 2019.03.19 =
+* Fix      - Error message display for rejected transactions
+* Fix      - Amount format issue in callback notification mail
+* New      - Event creation for Authorize and Capture process for on-hold transaction payments (Credit Card, Direct Debit SEPA, Direct Debit SEPA with payment guarantee, Invoice, Invoice with payment guarantee and PayPal)
+* New      - Event creation for Refund process for the payments (Credit Card, Direct Debit SEPA, Direct Debit SEPA with payment guarantee, Invoice, Invoice with payment guarantee, Instant Bank Transfer, iDEAL, PayPal, eps, giropay and Przelewy24)
+* New      - Allowing payments for configured countries
+* New      - Customized the payment logo
+* Enhanced - Novalnet payment module has been optimized as per new testcase
+
+= 2.0.1   - 2019.01.23 =
+* Fix      - Issue while updating the payment plugin from Marketplace
+
+= 2.0.0   - 2018.12.24 =
+* Fix      - Transaction information alignment in Invoice
+* New      - Guaranteed payment pending status has been implemented
+* New      - Guaranteed payment minimum amount reduced to 9.99 EUR
+* New      - Force 3D secure process has been implemented as per predefined filters and settings in the Novalnet admin portal
+* New      - Custom checkout overlay for Barzahlen
+* New      - Transaction reference has been implemented.
+* Enhanced - On-hold transaction configuration has been implemented for Credit Card, Direct Debit SEPA, Direct Debit SEPA with payment guarantee, Invoice, Invoice with payment guarantee and PayPal
+* Enhanced - Creation of order as default before executing payment call in the shopsystem (for all redirect payment methods: online bank transfers, Credit Card-3D secure and wallet systems), to avoid the missing orders on completion of payment on non-return of end user due to end user closed the browser or time out at payment, etc.!
+
+= 1.0.3   - 2018.08.22 =
+* New      - Payment logo customization option implemented
+
+= 1.0.2   - 2018.06.01 =
+* Enhanced - Adjusted payment plugin for the new configuration structure and multilingual support
+
+= 1.0.1   - 2018.01.17 =
+* Enhanced - Display error message without error code
+
