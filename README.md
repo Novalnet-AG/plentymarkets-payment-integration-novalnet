@@ -23,7 +23,44 @@ Through the individuality and flexibility, you can choose which payment methods 
 ## More information
 Find more about plentymarkets plugin on: https://www.novalnet.de/site_pdf/plentymarkets/Installation_guide.pdf<br>
 
+## Integrated Payment Methods
 
+- Direct Debit SEPA
+- Direct Debit ACH
+- Credit/Debit Cards
+- Apple Pay
+- Google Pay
+- Invoice
+- Prepayment
+- Invoice with payment guarantee
+- Direct Debit SEPA with payment guarantee
+- Instalment by Invoice
+- Instalment by Direct Debit SEPA
+- iDEAL | Wero
+- Przelewy24
+- eps
+- PayPal
+- MB Way
+- PostFinance Card
+- PostFinance E-Finance
+- Bancontact
+- Multibanco
+- Online bank transfer
+- Alipay
+- WeChat Pay
+- Trustly
+- Blik
+- TWINT
+     
+## Installation of Plentymarkets Shop Payment Plugin
+
+Follow these steps for plentymarkets shop Payment Integration by Novalnet:
+1.	Get the payment plugin for plentymarkets shop & detailed documentation by <a href="https://www.novalnet.de/kontakt"> contacting us </a>
+2.	Add the payment plugin to your plentymarkets shop
+3.	Activate the plugin 
+4.	Configure Product Activation Key & Payment access key in the shop admin panel
+5.	Activate & configure the preferred payment types in your shop admin panel
+   
 ## Contact
 Novalnet AG<br>
 Zahlungsinstitut (ZAG)<br>
