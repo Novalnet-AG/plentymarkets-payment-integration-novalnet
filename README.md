@@ -27,8 +27,8 @@ Find more about plentymarkets plugin on: https://www.novalnet.de/site_pdf/plenty
 ## Contact
 Novalnet AG<br>
 Zahlungsinstitut (ZAG)<br>
-Feringastr. 4<br>
-85774 Unterföhring<br>
+Gutenbergstr. 7<br>
+D-85748 Garching<br>
 Deutschland<br>
 E-mail: sales@novalnet.de<br>
 Tel: +49 89 9230683-20<br>
