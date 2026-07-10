@@ -55,7 +55,7 @@ Find more about plentymarkets plugin on: https://www.novalnet.de/site_pdf/plenty
 ## Installation of Plentymarkets Shop Payment Plugin
 
 Follow these steps for plentymarkets shop Payment Integration by Novalnet:
-1.	Get the payment plugin for plentymarkets shop & detailed documentation by <a href="https://www.novalnet.de/kontakt"> contacting us </a>
+1.	To get the payment plugin for the plentymarkets shop, follow the plugin installation steps provided in the <a href="https://www.novalnet.de/site_pdf/plentymarkets/Installation_guide.pdf"> Installation Guide </a>
 2.	Add the payment plugin to your plentymarkets shop
 3.	Activate the plugin 
 4.	Configure Product Activation Key & Payment access key in the shop admin panel
