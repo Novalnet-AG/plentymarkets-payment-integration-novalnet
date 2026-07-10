@@ -18,7 +18,7 @@ Through the individuality and flexibility, you can choose which payment methods 
 * No PCI DSS certification required
 * Secure SSL- encoded gateways
 * Responsive templates
-* Find currently supported payment methods on https://www.novalnet.de/zahlungsabwicklung-und-online-zahlungsabwicklung-mit-der-novalnet-realisieren
+* Find currently supported payment methods on https://www.novalnet.de/zahlungsabwicklung
 
 ## More information
 Find more about plentymarkets plugin on: https://www.novalnet.de/site_pdf/plentymarkets/Installation_guide.pdf<br>
