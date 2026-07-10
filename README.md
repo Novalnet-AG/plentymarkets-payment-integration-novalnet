@@ -18,7 +18,7 @@ Through the individuality and flexibility, you can choose which payment methods 
 * No PCI DSS certification required
 * Secure SSL- encoded gateways
 * Responsive templates
-* Find currently supported payment methods on https://www.novalnet.de/zahlungsabwicklung-und-online-zahlungsabwicklung-mit-der-novalnet-realisieren
+* Find currently supported payment methods on https://www.novalnet.de/zahlungsabwicklung
 
 ## More information
 Find more about plentymarkets plugin on: https://www.novalnet.de/site_pdf/plentymarkets/Installation_guide.pdf<br>
@@ -27,8 +27,8 @@ Find more about plentymarkets plugin on: https://www.novalnet.de/site_pdf/plenty
 ## Contact
 Novalnet AG<br>
 Zahlungsinstitut (ZAG)<br>
-Feringastr. 4<br>
-85774 Unterföhring<br>
+Gutenbergstr. 7<br>
+D-85748 Garching<br>
 Deutschland<br>
 E-mail: sales@novalnet.de<br>
 Tel: +49 89 9230683-20<br>
